@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KoshiWorkshop | KOSHI Agrotech - Agricultural Machinery & Implement Fabrication</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            koshi: {
+              50: '#f2f8f3',
+              100: '#e1efe4',
+              200: '#c4dfcb',
+              500: '#2b783f',
+              600: '#206031',
+              700: '#174a26',
+              800: '#12381e',
+              900: '#0c2414',
+            },
+            amberforge: {
+              400: '#fbb53c',
+              500: '#f59e0b',
+              600: '#d97706',
+            },
+            metal: {
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Outfit', sans-serif;
+    }
+    .hero-pattern {
+      background-color: #0f172a;
+      background-image: radial-gradient(#174a26 0.8px, transparent 0.8px), radial-gradient(#d97706 0.8px, #0f172a 0.8px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-koshi-600 selection:text-white">
+
+  <!-- Top Utility Bar -->
+  <div class="bg-metal-900 text-slate-300 text-xs py-2 px-4 border-b border-metal-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 text-amberforge-400 font-semibold">
+          <i class="fa-solid fa-gear fa-spin"></i> KOSHI Agrotech Machinery Manufacturing
+        </span>
+        <span class="hidden md:inline text-slate-600">|</span>
+        <span class="hidden md:inline text-slate-400">Agricultural Engineering, Heavy Fabrication & Agro Implements</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:+9779800000000" class="hover:text-white transition"><i class="fa-solid fa-phone mr-1"></i> +977 980-0000000</a>
+        <a href="#contact" class="text-amberforge-400 font-medium hover:underline">Workshop Visit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary Sticky Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-xl bg-koshi-700 flex items-center justify-center text-white shadow-md shadow-koshi-900/20 group-hover:bg-koshi-600 transition">
+          <i class="fa-solid fa-tractor text-amberforge-400 text-xl"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-black font-heading tracking-tight text-slate-900">
+            Koshi<span class="text-amberforge-600">Workshop</span>
+          </span>
+          <span class="block text-[10px] tracking-wider uppercase font-bold text-koshi-700">
+            Home of KOSHI Agrotech
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700">
+        <a href="#core-identity" class="hover:text-koshi-700 transition">Mission & Vision</a>
+        <a href="#agrotech" class="hover:text-koshi-700 transition">Agrotech Machinery</a>
+        <a href="#history" class="hover:text-koshi-700 transition">Our Journey</a>
+        <a href="#gallery" class="hover:text-koshi-700 transition">Workshop Photos</a>
+        <a href="#video-tour" class="hover:text-koshi-700 transition">Video Demonstration</a>
+        <a href="#map-section" class="hover:text-koshi-700 transition">Locate Us</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#contact" class="px-5 py-2.5 rounded-xl bg-koshi-700 hover:bg-koshi-800 text-white font-semibold text-sm shadow-md transition flex items-center gap-2">
+          <span>Inquire Machinery</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
+      <a href="#core-identity" class="block py-2 text-slate-700 font-medium hover:text-koshi-700 mobile-link">Mission, Vision & Values</a>
+      <a href="#agrotech" class="block py-2 text-slate-700 font-medium hover:text-koshi-700 mobile-link">KOSHI Agrotech Machinery</a>
+      <a href="#history" class="block py-2 text-slate-700 font-medium hover:text-koshi-700 mobile-link">Our History</a>
+      <a href="#gallery" class="block py-2 text-slate-700 font-medium hover:text-koshi-700 mobile-link">Photo Gallery</a>
+      <a href="#video-tour" class="block py-2 text-slate-700 font-medium hover:text-koshi-700 mobile-link">Workshop Video</a>
+      <a href="#map-section" class="block py-2 text-slate-700 font-medium hover:text-koshi-700 mobile-link">Google Maps Location</a>
+      <a href="#contact" class="block py-2 text-slate-700 font-medium hover:text-koshi-700 mobile-link">Contact & Inquiries</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-metal-900 text-white py-20 lg:py-28 overflow-hidden hero-pattern">
+    <div class="absolute inset-0 bg-gradient-to-r from-metal-900 via-metal-900/90 to-koshi-900/70 pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-koshi-800/80 border border-koshi-600/50 text-koshi-200 text-xs font-semibold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-amberforge-500 animate-pulse"></span>
+            Manufacturing Division: KOSHI Agrotech
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight leading-tight">
+            Engineering Precision. <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberforge-400 via-amber-300 to-lime-300">
+              Mechanizing Agriculture.
+            </span>
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Welcome to <strong>KoshiWorkshop</strong>. Through our specialized engineering brand <strong>KOSHI Agrotech</strong>, we design, fabricate, and manufacture rugged agricultural machinery and precision implements suited for terraced hills and plains.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#agrotech" class="px-7 py-3.5 rounded-xl bg-amberforge-500 hover:bg-amberforge-600 text-metal-900 font-bold text-sm sm:text-base shadow-lg transition flex items-center gap-2">
+              <i class="fa-solid fa-cogs"></i>
+              <span>Explore Machinery</span>
+            </a>
+            <a href="#core-identity" class="px-7 py-3.5 rounded-xl bg-metal-800 hover:bg-metal-700 border border-metal-700 text-white font-semibold text-sm sm:text-base transition flex items-center gap-2">
+              <i class="fa-solid fa-compass text-amberforge-400"></i>
+              <span>Our Mission & Vision</span>
+            </a>
+          </div>
+
+          <!-- Counter Specs -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-metal-800 text-center sm:text-left">
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
+              <div class="text-xs text-slate-400">Localized Engineering</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-white">Heavy-Duty</div>
+              <div class="text-xs text-slate-400">Tempered Steel Builds</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-white">Full Support</div>
+              <div class="text-xs text-slate-400">Spare Parts & Servicing</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-metal-800/90 border border-metal-700 rounded-3xl p-6 sm:p-8 backdrop-blur shadow-2xl relative">
+            <div class="flex items-center justify-between pb-4 border-b border-metal-700">
+              <div>
+                <span class="text-xs uppercase font-bold text-amberforge-400 tracking-wider">Featured Fabrication</span>
+                <h3 class="text-xl font-bold text-white">Multi-Crop Chaff Cutter & Thresher</h3>
+              </div>
+              <span class="px-3 py-1 bg-koshi-900 text-koshi-300 text-xs font-mono font-semibold rounded-lg border border-koshi-700">Agrotech 2026</span>
+            </div>
+
+            <!-- Visual Graphic Placeholder -->
+            <div class="h-52 rounded-2xl bg-gradient-to-br from-slate-900 to-metal-900 border border-metal-700/60 my-5 flex flex-col justify-center items-center text-center p-4">
+              <i class="fa-solid fa-wheat-awn-circle-exclamation text-6xl text-amberforge-500/80 mb-3"></i>
+              <p class="text-xs text-slate-300 font-medium">KOSHI Agrotech Heavy Thresher & Chopper Unit</p>
+              <span class="text-[11px] text-slate-400 mt-1">High-torque electric & diesel engine compatible</span>
+            </div>
+
+            <div class="space-y-2 text-xs text-slate-300">
+              <div class="flex justify-between py-1 border-b border-metal-700/60">
+                <span class="text-slate-400">Chassis Material:</span>
+                <span class="font-semibold text-white">Reinforced Structural Angle Iron</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-metal-700/60">
+                <span class="text-slate-400">Blade Hardness:</span>
+                <span class="font-semibold text-white">55-58 HRC Carbon Steel</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span class="text-slate-400">Warranty & Support:</span>
+                <span class="font-semibold text-amberforge-400">1-Year Warranty + Local Parts</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="mt-6 w-full py-3 bg-koshi-600 hover:bg-koshi-700 text-white rounded-xl font-bold text-xs uppercase tracking-wider text-center block transition">
+              Inquire About Custom Machinery
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Pillars: Mission, Vision, Values -->
+  <section id="core-identity" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-koshi-700 font-bold uppercase tracking-wider text-xs bg-koshi-100 px-3.5 py-1.5 rounded-full">Foundation & Identity</span>
+        <h2 class="text-3xl sm:text-4xl font-black font-heading text-slate-900 mt-3 mb-4">
+          The Three Pillars of KoshiWorkshop
+        </h2>
+        <p class="text-slate-600 text-base">
+          Our workshop and the <strong>KOSHI Agrotech</strong> machinery division operate on clear commitments to our agrarian communities.
+        </p>
+      </div>
+
+      <!-- 3 Main Interactive Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- CARD 1: MISSION -->
+        <div class="group relative bg-gradient-to-b from-koshi-50/50 to-white p-8 rounded-3xl border-2 border-koshi-200/80 hover:border-koshi-600 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-koshi-700 text-white flex items-center justify-center text-3xl shadow-lg shadow-koshi-900/20 group-hover:scale-110 group-hover:bg-koshi-600 transition-all duration-300 mb-6">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <div class="inline-block px-3 py-1 bg-koshi-100 text-koshi-800 text-xs font-bold uppercase tracking-wider rounded-md mb-2">Pillar One</div>
+            <h3 class="text-2xl font-black font-heading text-slate-900 mb-3">Our Mission</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              To empower farmers and agricultural businesses with dependable, affordable, and high-performance agricultural machinery and implements. We eliminate agricultural labor bottlenecks by engineering machinery that withstands local field conditions.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-koshi-100 flex items-center text-xs font-bold text-koshi-700">
+            <span>Accessible Mechanization for All Farms</span>
+            <i class="fa-solid fa-arrow-right ml-auto"></i>
+          </div>
+        </div>
+
+        <!-- CARD 2: VISION -->
+        <div class="group relative bg-gradient-to-b from-amber-50/50 to-white p-8 rounded-3xl border-2 border-amber-200/80 hover:border-amberforge-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-amberforge-500 text-metal-900 flex items-center justify-center text-3xl shadow-lg shadow-amberforge-500/20 group-hover:scale-110 group-hover:bg-amberforge-400 transition-all duration-300 mb-6">
+              <i class="fa-solid fa-compass"></i>
+            </div>
+            <div class="inline-block px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider rounded-md mb-2">Pillar Two</div>
+            <h3 class="text-2xl font-black font-heading text-slate-900 mb-3">Our Vision</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              To be recognized as the premier agricultural machinery manufacturing and fabrication center across Koshi Province and Nepal, fostering domestic engineering self-reliance and modernizing agriculture across South Asia.
+            </p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-amber-100 flex items-center text-xs font-bold text-amberforge-600">
+            <span>Domestic Engineering Leadership</span>
+            <i class="fa-solid fa-arrow-right ml-auto"></i>
+          </div>
+        </div>
+
+        <!-- CARD 3: VALUES -->
+        <div class="group relative bg-gradient-to-b from-metal-50 to-white p-8 rounded-3xl border-2 border-slate-200 hover:border-metal-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-metal-800 text-white flex items-center justify-center text-3xl shadow-lg shadow-metal-900/20 group-hover:scale-110 group-hover:bg-metal-700 transition-all duration-300 mb-6">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="inline-block px-3 py-1 bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-wider rounded-md mb-2">Pillar Three</div>
+            <h3 class="text-2xl font-black font-heading text-slate-900 mb-3">Core Values</h3>
+            <ul class="text-slate-600 text-sm space-y-2.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-koshi-600 mt-1"></i>
+                <span><strong>Forged Durability:</strong> No compromise on steel quality or weld strength.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-koshi-600 mt-1"></i>
+                <span><strong>Farmer-First:</strong> Machinery built to solve real-world farm problems.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-koshi-600 mt-1"></i>
+                <span><strong>Integrity:</strong> Honest pricing, guaranteed servicing, and lifelong support.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-100 flex items-center text-xs font-bold text-slate-800">
+            <span>Uncompromising Quality Standard</span>
+            <i class="fa-solid fa-arrow-right ml-auto"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KOSHI Agrotech Machinery Showcase -->
+  <section id="agrotech" class="py-20 bg-slate-50 border-t border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-amberforge-600 font-bold uppercase tracking-wider text-xs bg-amberforge-100 px-3 py-1 rounded-full">Manufacturing Division</span>
+          <h2 class="text-3xl sm:text-4xl font-black font-heading text-slate-900 mt-2">
+            KOSHI Agrotech Machinery Line
+          </h2>
+          <p class="text-slate-600 text-sm mt-1 max-w-xl">
+            Custom-fabricated in our workshop. Built from graded steel, tested in rocky and clay soil conditions, and serviced with immediate local spare parts.
+          </p>
+        </div>
+        <a href="#contact" class="px-5 py-2.5 rounded-xl border border-koshi-700 text-koshi-700 font-bold text-xs uppercase tracking-wider hover:bg-koshi-50 transition w-fit">
+          Request Machine Catalog PDF
+        </a>
+      </div>
+
+      <!-- Machinery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Machine 1 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+          <div class="h-48 bg-slate-100 flex items-center justify-center border-b border-slate-100 text-slate-400 group-hover:text-koshi-600 transition">
+            <i class="fa-solid fa-fan text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-koshi-700 bg-koshi-50 px-2.5 py-1 rounded">Feed & Forage</span>
+            <h4 class="text-xl font-bold font-heading text-slate-900 mt-2">Heavy Duty Chaff Cutter</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+              Designed for chopping green fodder, straw, and corn stalks with uniform cuts. Available with 2HP/3HP electric motors or diesel engines.
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+              <span class="font-semibold text-slate-700">Capacity: 400-800 kg/hr</span>
+              <a href="#contact" class="font-bold text-koshi-700 hover:underline">Get Price &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Machine 2 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+          <div class="h-48 bg-slate-100 flex items-center justify-center border-b border-slate-100 text-slate-400 group-hover:text-koshi-600 transition">
+            <i class="fa-solid fa-wheat-awn text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-koshi-700 bg-koshi-50 px-2.5 py-1 rounded">Post Harvest</span>
+            <h4 class="text-xl font-bold font-heading text-slate-900 mt-2">Multi-Crop Power Thresher</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+              High-efficiency threshing drum suited for paddy, wheat, and mustard seeds with minimal grain loss and high seed purity.
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+              <span class="font-semibold text-slate-700">Purity Rate: 98%+</span>
+              <a href="#contact" class="font-bold text-koshi-700 hover:underline">Get Price &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Machine 3 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+          <div class="h-48 bg-slate-100 flex items-center justify-center border-b border-slate-100 text-slate-400 group-hover:text-koshi-600 transition">
+            <i class="fa-solid fa-tractor text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-koshi-700 bg-koshi-50 px-2.5 py-1 rounded">Tillage & Field Prep</span>
+            <h4 class="text-xl font-bold font-heading text-slate-900 mt-2">Rotary Mini Tiller Implements</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+              Hardened rotary tiller blades, ridgers, ditchers, and cultivator attachments custom-manufactured to fit 7HP to 12HP power tillers.
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+              <span class="font-semibold text-slate-700">Forged Spring Blades</span>
+              <a href="#contact" class="font-bold text-koshi-700 hover:underline">Get Price &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Machine 4 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+          <div class="h-48 bg-slate-100 flex items-center justify-center border-b border-slate-100 text-slate-400 group-hover:text-koshi-600 transition">
+            <i class="fa-solid fa-cubes text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-koshi-700 bg-koshi-50 px-2.5 py-1 rounded">Grain Processing</span>
+            <h4 class="text-xl font-bold font-heading text-slate-900 mt-2">Commercial Maize Sheller</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+              High-output corn shelling machine that strips dry kernels without crushing cobs. Ideal for commercial farms and cooperatives.
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+              <span class="font-semibold text-slate-700">1.5 - 2.5 Tons/hr</span>
+              <a href="#contact" class="font-bold text-koshi-700 hover:underline">Get Price &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Machine 5 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+          <div class="h-48 bg-slate-100 flex items-center justify-center border-b border-slate-100 text-slate-400 group-hover:text-koshi-600 transition">
+            <i class="fa-solid fa-truck-pickup text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-koshi-700 bg-koshi-50 px-2.5 py-1 rounded">Farm Logistics</span>
+            <h4 class="text-xl font-bold font-heading text-slate-900 mt-2">Fabricated Farm Trailers & Tippers</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+              Tractor-towed robust steel chassis trailers with hydraulic tippers, built to handle gravel roads, fertilizer loads, and harvest transport.
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+              <span class="font-semibold text-slate-700">Payload: 2 - 5 Tons</span>
+              <a href="#contact" class="font-bold text-koshi-700 hover:underline">Get Price &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Machine 6 -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
+          <div class="h-48 bg-slate-100 flex items-center justify-center border-b border-slate-100 text-slate-400 group-hover:text-koshi-600 transition">
+            <i class="fa-solid fa-hammer text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-koshi-700 bg-koshi-50 px-2.5 py-1 rounded">Forged Implements</span>
+            <h4 class="text-xl font-bold font-heading text-slate-900 mt-2">Hand Tools & Blacksmith Works</h4>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+              Handcrafted high-carbon spring steel sickles (Hasiya), hoes (Kodalo), pickaxes, crowbars, and digging spades.
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+              <span class="font-semibold text-slate-700">High-Carbon 5160 Steel</span>
+              <a href="#contact" class="font-bold text-koshi-700 hover:underline">Get Price &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Our Journey / History Section -->
+  <section id="history" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-koshi-700 font-bold uppercase tracking-wider text-xs bg-koshi-100 px-3.5 py-1.5 rounded-full">Our Story & Roots</span>
+        <h2 class="text-3xl sm:text-4xl font-black font-heading text-slate-900 mt-3 mb-4">
+          The Journey of KoshiWorkshop
+        </h2>
+        <p class="text-slate-600 text-base">
+          From a humble village smithy repairing plowshares to establishing <strong>KOSHI Agrotech</strong>, our commitment to farmers has remained our driving force.
+        </p>
+      </div>
+
+      <!-- Timeline Structure (Ready for your customized dates and text) -->
+      <div class="relative border-l-2 border-koshi-200 ml-4 md:ml-32 space-y-12">
+        
+        <!-- Milestone 1 -->
+        <div class="relative pl-8 group">
+          <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-koshi-700 border-4 border-white flex items-center justify-center text-white text-xs shadow">
+            <i class="fa-solid fa-fire text-[10px]"></i>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:shadow-md transition">
+            <span class="text-xs font-bold text-amberforge-600 uppercase tracking-wider">Phase 1: The Beginning</span>
+            <h4 class="text-lg font-bold text-slate-900 mt-1">Traditional Blacksmithing & Agricultural Repair</h4>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+              Founded as an artisan workshop focused on forging traditional agricultural hand implements, sharpening plow blades, and servicing farm tools for local farming households in the Koshi region.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="relative pl-8 group">
+          <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-koshi-700 border-4 border-white flex items-center justify-center text-white text-xs shadow">
+            <i class="fa-solid fa-wrench text-[10px]"></i>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:shadow-md transition">
+            <span class="text-xs font-bold text-amberforge-600 uppercase tracking-wider">Phase 2: Modern Fabrication</span>
+            <h4 class="text-lg font-bold text-slate-900 mt-1">Adopting Power Machinery & Structural Metalcraft</h4>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+              Upgraded our workshop floor with pneumatic power hammers, heavy lathe machines, hydraulic presses, and precision welding rigs to manufacture high-durability tractor implements and trailers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="relative pl-8 group">
+          <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-amberforge-500 border-4 border-white flex items-center justify-center text-metal-900 text-xs shadow">
+            <i class="fa-solid fa-industry text-[10px]"></i>
+          </div>
+          <div class="bg-gradient-to-r from-koshi-50 to-white p-6 rounded-2xl border border-koshi-300 hover:shadow-md transition">
+            <span class="text-xs font-bold text-koshi-700 uppercase tracking-wider">Phase 3: The Present Era</span>
+            <h4 class="text-lg font-bold text-slate-900 mt-1">Launching KOSHI Agrotech Manufacturing</h4>
+            <p class="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed">
+              Formalized our machinery brand <strong>KOSHI Agrotech</strong>. Today we supply chaff cutters, multi-crop threshers, and custom agro-machinery directly to farm cooperatives, tea estates, and agricultural development initiatives across Nepal.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section id="gallery" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-koshi-700 font-bold uppercase tracking-wider text-xs bg-koshi-100 px-3.5 py-1.5 rounded-full">Visual Gallery</span>
+        <h2 class="text-3xl sm:text-4xl font-black font-heading text-slate-900 mt-3 mb-4">
+          Inside Our Workshop & Fabrications
+        </h2>
+        <p class="text-slate-600 text-base">
+          A glimpse into our fabrication bays, assembly lines, forging furnaces, and finished machinery.
+        </p>
+      </div>
+
+      <!-- Gallery Grid: REPLACE THESE PLACEHOLDER IMAGES WITH YOUR OWN PICTURES -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- GALLERY ITEM 1 -->
+        <div class="group relative rounded-2xl overflow-hidden bg-metal-900 border border-slate-200 shadow-sm aspect-video">
+          <!-- INSERT YOUR IMAGE HERE: Replace src="..." with your own image file or path -->
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" 
+               alt="Machinery Fabrication Bay" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-metal-900/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-3 left-4 right-4 text-white">
+            <span class="text-[10px] uppercase font-bold text-amberforge-400">Fabrication Bay</span>
+            <p class="text-sm font-semibold">TIG & MIG Welding of Machine Chassis</p>
+          </div>
+        </div>
+
+        <!-- GALLERY ITEM 2 -->
+        <div class="group relative rounded-2xl overflow-hidden bg-metal-900 border border-slate-200 shadow-sm aspect-video">
+          <!-- INSERT YOUR IMAGE HERE: Replace src="..." with your own image file or path -->
+          <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" 
+               alt="Blacksmith Forging" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-metal-900/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-3 left-4 right-4 text-white">
+            <span class="text-[10px] uppercase font-bold text-amberforge-400">Forging Floor</span>
+            <p class="text-sm font-semibold">Hot Induction Forging of Carbon Blades</p>
+          </div>
+        </div>
+
+        <!-- GALLERY ITEM 3 -->
+        <div class="group relative rounded-2xl overflow-hidden bg-metal-900 border border-slate-200 shadow-sm aspect-video">
+          <!-- INSERT YOUR IMAGE HERE: Replace src="..." with your own image file or path -->
+          <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80" 
+               alt="Tractor & Agricultural Machinery" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-metal-900/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-3 left-4 right-4 text-white">
+            <span class="text-[10px] uppercase font-bold text-amberforge-400">Field Testing</span>
+            <p class="text-sm font-semibold">Implements Rig Testing in Terraced Soil</p>
+          </div>
+        </div>
+
+        <!-- GALLERY ITEM 4 -->
+        <div class="group relative rounded-2xl overflow-hidden bg-metal-900 border border-slate-200 shadow-sm aspect-video">
+          <!-- INSERT YOUR IMAGE HERE: Replace src="..." with your own image file or path -->
+          <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" 
+               alt="Precision Lathe Turning" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-metal-900/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-3 left-4 right-4 text-white">
+            <span class="text-[10px] uppercase font-bold text-amberforge-400">Machining Section</span>
+            <p class="text-sm font-semibold">Precision Shaft & Bearing Fitting</p>
+          </div>
+        </div>
+
+        <!-- GALLERY ITEM 5 -->
+        <div class="group relative rounded-2xl overflow-hidden bg-metal-900 border border-slate-200 shadow-sm aspect-video">
+          <!-- INSERT YOUR IMAGE HERE: Replace src="..." with your own image file or path -->
+          <img src="https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?auto=format&fit=crop&w=800&q=80" 
+               alt="Assembled Machinery Stock" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-metal-900/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-3 left-4 right-4 text-white">
+            <span class="text-[10px] uppercase font-bold text-amberforge-400">Dispatch Yard</span>
+            <p class="text-sm font-semibold">Finished Chaff Cutters & Threshers</p>
+          </div>
+        </div>
+
+        <!-- GALLERY ITEM 6 -->
+        <div class="group relative rounded-2xl overflow-hidden bg-metal-900 border border-slate-200 shadow-sm aspect-video">
+          <!-- INSERT YOUR IMAGE HERE: Replace src="..." with your own image file or path -->
+          <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800&q=80" 
+               alt="Harvest Hand Tools" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-metal-900/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+          <div class="absolute bottom-3 left-4 right-4 text-white">
+            <span class="text-[10px] uppercase font-bold text-amberforge-400">Hand Tool Section</span>
+            <p class="text-sm font-semibold">Tempered Sickles & Ridge Kodalos</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section id="video-tour" class="py-20 bg-metal-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-amberforge-400 font-bold uppercase tracking-wider text-xs bg-amberforge-950/80 border border-amberforge-800/60 px-3.5 py-1.5 rounded-full">
+          Demonstration & Testing
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black font-heading text-white mt-3 mb-4">
+          See KOSHI Agrotech Machinery in Action
+        </h2>
+        <p class="text-slate-400 text-base">
+          Watch our multi-crop chaff cutters and threshers undergo continuous load testing in the workshop.
+        </p>
+      </div>
+
+      <!-- VIDEO CONTAINER: Ready for YouTube Embed or local MP4 file -->
+      <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden border-2 border-metal-700 bg-metal-800 shadow-2xl">
+        <div class="relative w-full aspect-video">
+          <!-- 
+            ========================================================================
+            INSERT YOUR YOUTUBE OR VIDEO FILE HERE:
+            Replace the 'src' below with your YouTube embed link or use an <video> tag:
+            Example YouTube: src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            Example Local: <video controls class="w-full h-full"><source src="video.mp4" type="video/mp4"></video>
+            ========================================================================
+          -->
+          <iframe 
+            class="w-full h-full" 
+            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+            title="KOSHI Agrotech Machinery Demonstration" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        
+        <div class="p-6 bg-metal-800/90 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-300">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-koshi-700 flex items-center justify-center text-white">
+              <i class="fa-solid fa-play text-xs"></i>
+            </div>
+            <span><strong>Machinery Demo:</strong> 3HP Electric Chaff Cutter cutting wet napier grass</span>
+          </div>
+          <a href="#contact" class="px-4 py-2 rounded-lg bg-metal-700 hover:bg-metal-600 text-white font-semibold transition">
+            Request Live Demo on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Google Maps Section -->
+  <section id="map-section" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-koshi-700 font-bold uppercase tracking-wider text-xs bg-koshi-100 px-3.5 py-1.5 rounded-full">Workshop Location</span>
+        <h2 class="text-3xl sm:text-4xl font-black font-heading text-slate-900 mt-3 mb-4">
+          Visit KoshiWorkshop & Our Fabrication Bays
+        </h2>
+        <p class="text-slate-600 text-base">
+          Located in the heart of Koshi Province. Inspect our raw steel supplies, witness active forging, or test machinery in person.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Google Map Iframe Container -->
+        <div class="lg:col-span-8 rounded-3xl overflow-hidden border border-slate-300 shadow-md h-96 relative">
+          <!-- 
+            ========================================================================
+            INSERT YOUR GOOGLE MAPS EMBED URL HERE:
+            1. Open Google Maps, search your workshop location.
+            2. Click "Share" -> "Embed a map".
+            3. Copy the URL inside 'src="..."' and paste it into the iframe below.
+            ========================================================================
+          -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114032.5574384666!2d87.20120536440263!3d26.812328221876412!2m3!1f0!2f0!3f0!32m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef419f96b27e69%3A0xe54d682496a77d70!2sDharan%2C%20Nepal!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Location Info Card -->
+        <div class="lg:col-span-4 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 space-y-5">
+          <h3 class="text-xl font-bold font-heading text-slate-900">Visiting Details</h3>
+          
+          <div class="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
+            <i class="fa-solid fa-location-dot text-koshi-700 text-lg mt-0.5"></i>
+            <div>
+              <strong>Facility Address:</strong>
+              <p class="text-slate-600 mt-0.5">KoshiWorkshop & KOSHI Agrotech Works, Industrial Area Highway, Koshi Province, Nepal</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
+            <i class="fa-solid fa-clock text-amberforge-600 text-lg mt-0.5"></i>
+            <div>
+              <strong>Working Hours:</strong>
+              <p class="text-slate-600 mt-0.5">Sunday - Friday: 7:30 AM - 6:00 PM</p>
+              <p class="text-slate-500 text-xs">Saturday: Scheduled Customer Demos</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
+            <i class="fa-solid fa-phone text-blue-600 text-lg mt-0.5"></i>
+            <div>
+              <strong>Direct Workshop Desk:</strong>
+              <p class="text-slate-600 mt-0.5">+977 980-0000000 / 025-500000</p>
+            </div>
+          </div>
+
+          <a href="https://maps.google.com" target="_blank" class="block text-center w-full py-3 bg-koshi-700 hover:bg-koshi-800 text-white rounded-xl font-bold text-xs uppercase tracking-wider transition">
+            Open in Google Maps App
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact & Machine Inquiry Form -->
+  <section id="contact" class="py-20 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-md">
+        <div class="text-center mb-8">
+          <span class="text-koshi-700 font-bold uppercase tracking-wider text-xs bg-koshi-100 px-3.5 py-1.5 rounded-full">Direct Inquiry</span>
+          <h2 class="text-3xl font-black font-heading text-slate-900 mt-3">Speak with Our Machinery Engineers</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">
+            Need a custom agricultural implement, quotation for KOSHI Agrotech machinery, or bulk forged tools? Send us a message.
+          </p>
+        </div>
+
+        <form id="workshopForm" onsubmit="handleInquirySubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Your Full Name *</label>
+              <input type="text" required placeholder="e.g. Binod Shrestha" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-koshi-600 focus:outline-none transition">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Mobile / WhatsApp Number *</label>
+              <input type="tel" required placeholder="e.g. 98XXXXXXXX" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-koshi-600 focus:outline-none transition">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Inquiry Category</label>
+              <select class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-koshi-600 focus:outline-none transition">
+                <option>KOSHI Agrotech Machinery (Chaff Cutter/Thresher)</option>
+                <option>Rotary Tiller Attachments & Implements</option>
+                <option>Bulk Forged Hand Tools (Sickles, Hoes, Mattocks)</option>
+                <option>Custom Blueprint Metal Fabrication</option>
+                <option>Tractor Trailer Manufacturing</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Customer Type</label>
+              <select class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-koshi-600 focus:outline-none transition">
+                <option>Individual Farmer / Commercial Farm</option>
+                <option>Agricultural Cooperative</option>
+                <option>Hardware & Implement Retailer</option>
+                <option>Government / Municipal Project</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Your Requirements / Machine Specifications</label>
+            <textarea rows="4" required placeholder="Tell us about the crops, power supply (single phase/three phase/diesel), or tool dimensions you need..." class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-koshi-600 focus:outline-none transition"></textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+            <button type="button" onclick="openWhatsAppChat()" class="w-full sm:w-auto px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition">
+              <i class="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp
+            </button>
+
+            <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-koshi-700 hover:bg-koshi-800 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition shadow-md">
+              Submit Inquiry
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-metal-900 text-slate-400 py-12 border-t border-metal-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-metal-800 text-xs">
+        
+        <div class="space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-koshi-700 flex items-center justify-center text-white">
+              <i class="fa-solid fa-tractor text-amberforge-400"></i>
+            </div>
+            <span class="text-lg font-bold font-heading text-white">Koshi<span class="text-amberforge-500">Workshop</span></span>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            Home to <strong>KOSHI Agrotech</strong>. Dedicated to agricultural machinery manufacturing, heavy implements fabrication, and farmer-focused mechanical engineering.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3">Core Machinery</h4>
+          <ul class="space-y-2">
+            <li><a href="#agrotech" class="hover:text-white transition">Electric & Diesel Chaff Cutters</a></li>
+            <li><a href="#agrotech" class="hover:text-white transition">Multi-Crop Paddy Threshers</a></li>
+            <li><a href="#agrotech" class="hover:text-white transition">High-Speed Maize Shellers</a></li>
+            <li><a href="#agrotech" class="hover:text-white transition">Rotary Tiller Blades & Ridgers</a></li>
+            <li><a href="#agrotech" class="hover:text-white transition">Custom Agricultural Trailers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3">Quick Navigation</h4>
+          <ul class="space-y-2">
+            <li><a href="#core-identity" class="hover:text-white transition">Mission, Vision & Values</a></li>
+            <li><a href="#history" class="hover:text-white transition">Our Workshop Journey</a></li>
+            <li><a href="#gallery" class="hover:text-white transition">Fabrication Photos</a></li>
+            <li><a href="#video-tour" class="hover:text-white transition">Demonstration Video</a></li>
+            <li><a href="#map-section" class="hover:text-white transition">Locate on Google Maps</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3">Workshop Address</h4>
+          <p class="leading-relaxed mb-3">
+            KoshiWorkshop & KOSHI Agrotech<br>
+            Industrial Zone, Koshi Province, Nepal<br>
+            Phone: +977 980-0000000
+          </p>
+          <div class="flex gap-2">
+            <span class="w-8 h-8 rounded-lg bg-metal-800 flex items-center justify-center text-white"><i class="fa-brands fa-facebook-f"></i></span>
+            <span class="w-8 h-8 rounded-lg bg-metal-800 flex items-center justify-center text-white"><i class="fa-brands fa-whatsapp"></i></span>
+            <span class="w-8 h-8 rounded-lg bg-metal-800 flex items-center justify-center text-white"><i class="fa-brands fa-youtube"></i></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-slate-500 gap-4">
+        <div>&copy; <span id="currentYear"></span> KoshiWorkshop & KOSHI Agrotech. All rights reserved.</div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:underline">Fabrication Standards</a>
+          <a href="#" class="hover:underline">Warranty Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-metal-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 text-sm">
+    <i class="fa-solid fa-circle-check text-koshi-500 text-lg"></i>
+    <span id="toastMsg">Inquiry sent successfully!</span>
+  </div>
+
+  <script>
+    // Auto-update copyright year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile Navigation Drawer Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    mobileBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuIcon.className = isHidden ? "fa-solid fa-bars text-xl" : "fa-solid fa-xmark text-xl";
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.className = "fa-solid fa-bars text-xl";
+      });
+    });
+
+    // Handle Contact Form Submission
+    function handleInquirySubmit(event) {
+      event.preventDefault();
+      showToast("Thank you! Your inquiry has been submitted to KOSHI Agrotech.");
+      event.target.reset();
+    }
+
+    // Direct WhatsApp Opener
+    function openWhatsAppChat() {
+      const text = encodeURIComponent("Hello KoshiWorkshop / KOSHI Agrotech! I would like to inquire about your agricultural machinery.");
+      window.open(`https://wa.me/9779800000000?text=${text}`, '_blank');
+    }
+
+    // Toast Messenger Logic
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = message;
+      toast.classList.remove('hidden');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
